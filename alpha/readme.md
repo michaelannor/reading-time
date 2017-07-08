@@ -39,3 +39,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Hat tip to Hyperakt for [Social Good Ipsum](http://socialgoodipsum.com/)
 * Medium for inspiration
+* Readme template by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
