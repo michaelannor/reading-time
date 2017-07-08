@@ -4,7 +4,7 @@ A simple web application to find the number of minutes it would take to read a p
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. \
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Prerequisites
 
@@ -39,5 +39,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Hat tip to [Hyperakt](http://hyperakt.com/) for [Social Good Ipsum](http://socialgoodipsum.com/)
-* Medium for inspiration
+* Inspired by [Medium](medium.com) and [Read-o-meter](http://niram.org/read/)
 * Readme template by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
