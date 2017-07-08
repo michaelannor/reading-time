@@ -2,17 +2,13 @@
 
 /**
  * @author: Michael Annor
- * date: 15th November, 2015
- * description: ajax-action page, interfaces with javascript to process commands from the frontend
+ * project: counting sheep (working title)
+ * description: action page to return reading time from set text
  */
-  $wpm = 200;
+
   $cmd = $_REQUEST['cmd'];
   switch ($cmd) {
-    case "wordcount":
-      get_word_count();
-      break;
-
-    case "2":
+    case "1":
       get_reading_time();
       break;
 
@@ -24,11 +20,29 @@
 
 
 	function get_reading_time() {
-    $text = $_REQUEST['text'];
-    $wpm = $_REQUEST['wpm'];
-				 $word_count = get_word_count($text);
-// at 200 wpm
-				 $reading_time = $word_count / $wpm;
+
+    $default_wpm = 200;
+    $wpm;
+    $warning;
+
+    if (isset($_REQUEST['text'])){
+      $text = $_REQUEST['text'];
+      if (isset($_REQUEST['wpm'])){
+        if ($_REQUEST['wpm'] > 0){
+          $wpm = $_REQUEST['wpm'];
+        }
+        else {
+          $wpm = $default_wpm;
+          $warning[0] = "incorrect reading speed set, default used";
+        }
+      }
+      else {
+        $wpm = $default_wpm;
+        $warning[1] = "no reading set, default used";
+      }
+
+			$word_count = word_count_helper($text);
+			$reading_time = reading_time_helper($word_count, $wpm);
          //generate the JSON message to echo to the browser
            echo '{"result":1,"text":';	//start of json object
            echo json_encode($text);			//convert the result array to json object
@@ -38,19 +52,30 @@
            echo json_encode($wpm);			//convert the result array to json object
            echo ',"reading time":';	//start of json object
            echo json_encode($reading_time);			//convert the result array to json object
+           echo ',"warnings":';	//start of json object
+           echo json_encode($warning);			//convert the result array to json object
            echo "}";							//end of json array and object
-	}
+	  }
+    else {
+      $error =  "No text was set";
+      echo '{"result":1,"text":';	//start of json object
+      echo json_encode($error);			//convert the result array to json object
+      echo "}";
+    }
+  }
 
-	function get_word_count() {
-    $text = $_REQUEST['text'];
-		 $count = word_count_helper($text);
-		 return $count;
-	}
 
-  function word_count_helper($text) {
+  function word_count_helper($text)
+  {
 		 $text_array = explode(" ",$text);
 		 $count = count($text_array);
      return $count;
+  }
+
+  function reading_time_helper($wordcount, $wpm)
+  {
+    $reading_time = $wordcount / $wpm;
+    return $reading_time;
   }
 
 ?>
