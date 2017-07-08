@@ -51,7 +51,7 @@
            echo ',"reading speed (wpm)":';	//start of json object
            echo json_encode($wpm);			//convert the result array to json object
            echo ',"reading time":';	//start of json object
-           echo json_encode($reading_time);			//convert the result array to json object
+           echo json_encode($reading_time." minute(s)");			//convert the result array to json object
            echo ',"warnings":';	//start of json object
            echo json_encode($warning);			//convert the result array to json object
            echo "}";							//end of json array and object
@@ -64,7 +64,6 @@
     }
   }
 
-
   function word_count_helper($text)
   {
 		 $text_array = explode(" ",$text);
@@ -75,7 +74,7 @@
   function reading_time_helper($wordcount, $wpm)
   {
     $reading_time = $wordcount / $wpm;
-    return $reading_time;
+    return round($reading_time);
   }
 
 ?>
