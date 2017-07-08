@@ -17,7 +17,8 @@ Apache Server with PHP (You could use XAMPP to set this up)
 ## Built With
 
 * [PHP](http://php.net/) - The server side language used
-* [Social Good Ipsum](http://socialgoodipsum.com/) - Used to generate sample text for testing.
+* [JSONLint](https://jsonlint.com/) - Used to test JSON responses for errors
+* [Postman](https://www.getpostman.com/) - For testing HTTP requests.
 
 ## Versioning
 
@@ -37,6 +38,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to Hyperakt for [Social Good Ipsum](http://socialgoodipsum.com/)
+* Hat tip to [Hyperakt](http://hyperakt.com/) for [Social Good Ipsum](http://socialgoodipsum.com/)
 * Medium for inspiration
 * Readme template by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
