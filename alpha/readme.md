@@ -39,5 +39,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Hat tip to [Hyperakt](http://hyperakt.com/) for [Social Good Ipsum](http://socialgoodipsum.com/)
-* Medium for inspiration
+* Medium and [Read-o-meter](http://niram.org/read/) inspiration
 * Readme template by [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
